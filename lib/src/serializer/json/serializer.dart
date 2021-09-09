@@ -56,10 +56,10 @@ class Serializer extends AbstractSerializer {
             Extra(
                 challenge: message[2]['challenge'],
                 salt: message[2]['salt'],
-                keylen: message[2]['keylen'],
+                keylen: message[2]['keylen'] ?? 0,
                 iterations: message[2]['iterations'],
                 memory: message[2]['memory'],
-                kdf: message[2]['kdf'],
+                kdf: message[2]['kdf'] ?? '',
                 nonce: message[2]['nonce']));
       }
       if (messageId == MessageTypes.CODE_WELCOME) {
